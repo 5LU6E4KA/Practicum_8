@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Practicum_8"
         mc:Ignorable="d"
         Title="Виталев_3ПКС-220_ПР8" Icon="winicon.ico"
-        Height="450" Width="800" ResizeMode="NoResize">
+        Height="370" Width="450" ResizeMode="NoResize">
+
     <Window.Resources>
         <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
         <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
@@ -36,7 +37,7 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
                             </Trigger>
                             <Trigger Property="IsKeyboardFocused" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value='{StaticResource TextBox.Focus.Border}'/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -53,10 +54,17 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <Grid x:Name="MainBlock" Background="#E0FFFF">
-        <TextBlock Text="Введите текст" Margin="318,39,318,346" Width="164" FontWeight="Black" FontStyle="Normal" Foreground="Red" TextAlignment="Center" FontSize="15"/>
-        <TextBox FontSize="15" Style="{DynamicResource Style}" x:Name="Box" HorizontalAlignment="Center" Height="211" SpellCheck.IsEnabled="False" Language="Ru" TextWrapping="Wrap" VerticalAlignment="Center" Width="398"/>
-        <Button Content="Проверить" HorizontalAlignment="Left" Height="36" Margin="201,344,0,0" VerticalAlignment="Top" Width="188" FontStyle="Normal" FontSize="15" FontWeight="Bold"  Click="StartCheckClick"/>
-        <Button Content="Очистить" HorizontalAlignment="Left" Height="36" Margin="411,344,0,0" VerticalAlignment="Top" Width="188" FontStyle="Normal" FontSize="15" FontWeight="Bold"  Click="StartClearClick"/>
+
+    <Grid x:Name="MainBlock" Background="#7395AE">
+        <Menu x:Name="Menu" Height ="20" VerticalAlignment="Top" Width ="100" HorizontalAlignment="Left" >
+            <MenuItem Header ="Выбор языка" FontSize="15" Height="20" Width="120" Background="#7395AE">
+                <RadioButton x:Name="Point" GroupName="Language" Content="Русский" Checked="ClickLanguage"/>
+                <RadioButton GroupName="Language" Content="Английский" Checked="ClickLanguage"/>
+            </MenuItem>
+        </Menu>
+        <TextBlock Text="Проверка пунктуации" Margin="131,14,131,286" FontWeight="Black" FontStyle="Normal" Foreground="DarkOrange" TextAlignment="Center" FontSize="15" RenderTransformOrigin="0.499,0.715"/>
+        <TextBox FontSize="15" Style="{DynamicResource MyBox}" x:Name="Box" ToolTip="Введите текст здесь" HorizontalAlignment="Center" Height="206" SpellCheck.IsEnabled="False" Language="Ru" TextWrapping="Wrap" VerticalAlignment="Top" Width="414" Margin="0,52,0,0"/>
+        <Button Content="Проверить" HorizontalAlignment="Left" Height="36" Margin="225,272,0,0" VerticalAlignment="Top" Width="188"  FontSize="15" Style="{DynamicResource GlassButton}"  FontStyle="Normal" FontWeight="Black" Click="StartCheckClick"/>
+        <Button Content="Очистить" HorizontalAlignment="Left" Height="36" Margin="18,272,0,0" VerticalAlignment="Top" Width="188"  FontSize="15" Style="{DynamicResource GlassButton}" FontStyle="Normal" FontWeight="Black" Click="StartClearClick" RenderTransformOrigin="0.586,-0.236"/>
     </Grid>
 </Window>
