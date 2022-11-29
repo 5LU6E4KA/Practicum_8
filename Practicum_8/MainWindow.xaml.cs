@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel;
+using System.Windows.Markup;
 
 namespace Practicum_8
 {
@@ -45,11 +46,12 @@ namespace Practicum_8
             }
         }
 
-        private Dictionary<string, string> languages = new Dictionary<string, string> { { "Русский", "ru" }, { "Английский", "en" } };
-
         private void ClickLanguage(object sender, RoutedEventArgs e)
         {
-            Box.Language = System.Windows.Markup.XmlLanguage.GetLanguage(languages[((RadioButton)sender).Content.ToString()]);
+            var languages = new Dictionary<string, string> { { "Русский", "ru" }, { "Английский", "en" } };
+            Box.Language = XmlLanguage.GetLanguage(languages[((RadioButton)sender).Content.ToString()]);
+
+
         }
 
         private void WindowClosing(object sender, CancelEventArgs e)

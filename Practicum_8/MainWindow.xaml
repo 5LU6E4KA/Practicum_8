@@ -62,7 +62,7 @@
                 <RadioButton GroupName="Language" Content="Английский" Checked="ClickLanguage"/>
             </MenuItem>
         </Menu>
-        <TextBlock Text="Проверка пунктуации" Margin="131,14,131,286" FontWeight="Black" FontStyle="Normal" Foreground="DarkOrange" TextAlignment="Center" FontSize="15" RenderTransformOrigin="0.499,0.715"/>
+        <TextBlock Text="Проверка орфографии" Margin="131,14,131,286" FontWeight="Black" FontStyle="Normal" Foreground="DarkOrange" TextAlignment="Center" FontSize="15" RenderTransformOrigin="0.499,0.715"/>
         <TextBox FontSize="15" Style="{DynamicResource MyBox}" x:Name="Box" ToolTip="Введите текст здесь" HorizontalAlignment="Center" Height="206" SpellCheck.IsEnabled="False" Language="Ru" TextWrapping="Wrap" VerticalAlignment="Top" Width="414" Margin="0,52,0,0"/>
         <Button Content="Проверить" HorizontalAlignment="Left" Height="36" Margin="225,272,0,0" VerticalAlignment="Top" Width="188"  FontSize="15" Style="{DynamicResource GlassButton}"  FontStyle="Normal" FontWeight="Black" Click="StartCheckClick"/>
         <Button Content="Очистить" HorizontalAlignment="Left" Height="36" Margin="18,272,0,0" VerticalAlignment="Top" Width="188"  FontSize="15" Style="{DynamicResource GlassButton}" FontStyle="Normal" FontWeight="Black" Click="StartClearClick" RenderTransformOrigin="0.586,-0.236"/>
